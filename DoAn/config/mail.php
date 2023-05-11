@@ -85,7 +85,7 @@ return [
 
     'from' => [
         'address' => 'pvhoangk45@gmail.com',
-        'name' =>'Duc Minh Travel (Du lịch Việt)',
+        'name' =>'Minh Duc Travel (Du lịch Việt)',
     ],
 
     /*

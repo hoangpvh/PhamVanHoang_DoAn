@@ -78,7 +78,7 @@
                 <div class="col-md-12 text-center">
                     <div class="img" style="background-image: url({{ asset('page/images/bg_2.jpg') }});">
                         <div class="overlay"></div>
-                        <h2>Chào mừng bạn đến với Duc Minh Travel</h2>
+                        <h2>Chào mừng bạn đến với Minh Duc Travel</h2>
                         <p>Chúng tôi sẽ đem đến trãi nghiệm các tour du lịch tốt nhất dành cho bạn</p>
                         <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Liên hệ qua Messager của chúng
                                 tôi</a></p>

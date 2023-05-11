@@ -4,7 +4,7 @@
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
                     <h2 class="ftco-heading-2">Giới thiệu</h2>
-                    <p>Website Duc Minh Travel cho phép đặt các tour du lịch trong vào ngoài nước.</p>
+                    <p>Website Minh Duc Travel cho phép đặt các tour du lịch trong vào ngoài nước.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
                         <li class="ftco-animate"><a href="https://www.facebook.com/hoang.phamvan.372019"><span class="fa fa-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="https://www.instagram.com/_2.imhoang/"><span class="fa fa-instagram"></span></a></li>
