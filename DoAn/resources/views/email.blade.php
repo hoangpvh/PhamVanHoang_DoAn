@@ -16,7 +16,7 @@
 
     <div style="background-color:#ddd;margin-top:8px">
         <div style="margin-left:8px">
-            Mã booking: <b style="color:red"> {{ $bookTour->id }}</b><br>
+            Mã booking: <b style="color:red"> {{ $bookTour->id }}</b>
             <b style="color:red">Xin quý khách vui lòng nhớ số booking để thuận tiện cho giao dịch sau này</b><br>
             @php
                 $totalPrice = $bookTour->b_number_adults * $bookTour->b_price_adults + $bookTour->b_number_children * $bookTour->b_price_children;

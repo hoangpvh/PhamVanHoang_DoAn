@@ -28,7 +28,7 @@
         </div>
     </div style="margin-top:8px">
     Họ tên:<b> {{ $user->name }}</b><br>
-    email: <b>{{ $user->email }}</b><br>
+    Email: <b>{{ $user->email }}</b><br>
     Số điện thoại: <b>{{ $user->phone }}</b><br>
     Địa chỉ: <b>{{ $user->address }} </b><br>
 

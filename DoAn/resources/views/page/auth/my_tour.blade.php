@@ -76,6 +76,8 @@
                                                     class="btn btn-block {{ $classStatus[$tour->b_status] }} btn-sm btn-status-order">{{ $status[$tour->b_status] }}</button>
                                             @endif
                                             @if ($tour->b_status == 1)
+                                                <a class="btn btn-primary btn-sm btn-block"
+                                                    href="{{ route('user.get-tour', ['id' => $tour->id]) }}">Sửa</a>
                                                 <a class="btn btn-block btn-danger btn-sm btn-cancel-order"
                                                     href="{{ route('post.cancel.order.tour', ['status' => 5, 'id' => $tour->id]) }}">Hủy</a>
                                             @endif

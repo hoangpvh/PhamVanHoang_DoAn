@@ -120,4 +120,27 @@ class TourController extends Controller
             return redirect()->back()->with('error', 'Số lượng người đăng ký đã vượt quá giới hạn');
 
     }
+    public function getTour(Request $request, int $id) {
+       $bookTour = BookTour::with('tour')->find($id);
+       $user =  User::find(Auth::guard('users')->user()->id);
+       return view('page.tour.book', ['bookTour' => $bookTour, 'tour' => $bookTour->tour, 'user' => $user]);
+    }
+    public function saveBookTour(Request $request, int $id)
+    {
+        $params = $request->all();
+        try {
+            $book = BookTour::find($id);
+            $book->update($params);
+            $user =  User::find(Auth::guard('users')->user()->id);
+            $tour = Tour::find($book->b_tour_id);
+            $mail = $user->email;
+            Mail::send('emailtn',compact('book','tour','user'),function($email) use($mail){
+                $email->subject('Thông tin xác nhận đơn Booking');
+                $email->to($mail);
+            });
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Đã xảy ra lỗi khi lưu dữ liệu');
+        }
+        return redirect()->route('page.home')->with('success', 'Cám ơn bạn đã đặt tour chúng tôi sẽ liên hệ sớm để xác nhận.');
+    }
 }
