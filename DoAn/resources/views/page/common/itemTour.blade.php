@@ -43,16 +43,12 @@
 
                 <p class="location"><span class="fa fa-user"></span> Đã xác nhận : {{ $tour->t_number_registered }}</p>
                 @if ($tour->t_number_registered < $tour->t_number_guests)
-                    <a class="location"><span class="fa fa-user"></span> số người đang đăng ký: {{ $tour->t_follow }}
+                    <a class="location"><span class="fa fa-user"></span> Số người đang đăng ký: {{ $tour->t_follow }}
                     </a>
                 @endif
                 @if ($number - $tour->t_follow < 2 && $tour->t_number_registered != $tour->t_number_guests)
-                    <a style="color:red"> sắp hết </a>
+                    <a style="color:red"> Sắp hết </a>
                 @endif
-                {{-- <ul> --}}
-                {{-- <li><i class="fa fa-user" aria-hidden="true"></i> 2</li> --}}
-                {{-- <li><i class="fa fa-user" aria-hidden="true"></i> 3</li> --}}
-                {{-- </ul> --}}
             </div>
         </div>
     </div>

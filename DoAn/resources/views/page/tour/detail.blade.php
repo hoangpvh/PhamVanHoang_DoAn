@@ -59,6 +59,10 @@
                             </tr>
                             <tr>
                                 <td width="30%">Đã đăng ký</td>
+                                <td>{{ $tour->t_follow }}</td>
+                            </tr>
+                            <tr>
+                                <td width="30%">Đã xác nhận</td>
                                 <td>{{ $tour->t_number_registered }}</td>
                             </tr>
                             <tr>

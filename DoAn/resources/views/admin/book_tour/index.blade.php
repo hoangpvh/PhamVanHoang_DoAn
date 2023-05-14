@@ -84,7 +84,6 @@
             </div>
         </section>
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -123,15 +122,13 @@
                                                 <p><b>Số người lớn</b>: {{ $book->b_number_adults }} - <b>Thành tiền</b>: {{ number_format($book->b_number_adults*$book->b_price_adults, 0,',','.') }} vnd</p>
                                                 <p><b>Số trẻ em</b>: {{ $book->b_number_children }} - <b>Thành tiền</b>: {{ number_format($book->b_number_children*$book->b_price_children, 0,',','.') }} vnd</p>
                                                 <p><b>Số trẻ em (2-6 tuổi) :</b> {{ $book->b_number_child6 }} - <b>Thành tiền</b>: {{ number_format($book->b_number_child6*$book->b_price_child6, 0,',','.') }} vnd</p>
-                                            <p><b>Số trẻ em (dưới 2 tuổi) :</b> {{ $book->b_number_child2 }} - <b>Thành tiền</b>: {{ number_format($book->b_number_child2*$book->b_price_child2, 0,',','.') }} vnd</p>
-
-                                                
+                                                <p><b>Số trẻ em (dưới 2 tuổi) :</b> {{ $book->b_number_child2 }} - <b>Thành tiền</b>: {{ number_format($book->b_number_child2*$book->b_price_child2, 0,',','.') }} vnd</p>
                                                 @php
                                                     $totalPrice = ($book->b_number_adults*$book->b_price_adults) + ($book->b_number_children*$book->b_price_children)+ ($book->b_number_child6*$book->b_price_child6)+ ($book->b_number_child2*$book->b_price_child2)
                                                 @endphp
                                                 <p><b>Tổng tiền </b>: {{ number_format($totalPrice, 0,',','.') }} vnd</p>
-                                                <p><b>mã booking</b>: {{ $book->id }}</p>
-                                                <p><b>điểm đón</b>: {{ $book->b_address }}</p>
+                                                <p><b>Mã booking</b>: {{ $book->id }}</p>
+                                                <p><b>Điểm đón</b>: {{ $book->b_address }}</p>
                                                 <p><b>Ghi chú</b>: {{ $book->b_note }}</p>
                                             </td>
                                             <td style="vertical-align: middle; width: 11%">
@@ -152,9 +149,6 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
-                                                {{--<a class="btn btn-info btn-sm" target="_blank" href="" title="Thông tin đơn hàng">--}}
-                                                    {{--<i class="fa fa-eye"></i>--}}
-                                                {{--</a>--}}
                                             </td>
                                             @endif
                                         </tr>

@@ -52,10 +52,10 @@
                 <div class="col-md-3 d-flex">
                     <div class="align-self-stretch box p-4 text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="fa fa-fw fa-facebook-f"></span>
+                            <span class="fa fa-globe"></span>
                         </div>
                         <h3 class="mb-2">Website</h3>
-                        <p><a href="#"></a></p>
+                        <p><a href="/">Minh Duc Travel</a></p>
                     </div>
                 </div>
             </div>

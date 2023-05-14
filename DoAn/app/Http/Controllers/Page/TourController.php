@@ -13,7 +13,7 @@ use Mail;
 
 class TourController extends Controller
 {
-    //
+    
     public function index(Request $request)
     {
         $tours = Tour::with('user');
@@ -81,7 +81,7 @@ class TourController extends Controller
         $tour = Tour::find($id);
         $numberUser = $request->b_number_adults + $request->b_number_children+ $request->b_number_child6+ $request->b_number_child2;
         if (($tour->t_number_registered + $numberUser) > $tour->t_number_guests) {
-            return redirect()->back()->with('error', 'Số lượng người đăng ký đã vượt quá giới hạn');
+            return redirect()->back()->with('error', 'Số lượng người tham gia đã đủ');
         }
 
         \DB::beginTransaction();
@@ -117,7 +117,7 @@ class TourController extends Controller
     public function loi()
     {
       
-            return redirect()->back()->with('error', 'Số lượng người đăng ký đã vượt quá giới hạn');
+            return redirect()->back()->with('error', 'Số lượng người tham gia đã đủ');
 
     }
     public function getTour(Request $request, int $id) {

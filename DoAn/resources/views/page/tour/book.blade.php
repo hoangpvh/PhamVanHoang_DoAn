@@ -54,7 +54,7 @@
                             <span class="fa fa-globe"></span>
                         </div>
                         <h3 class="mb-2">Website</h3>
-                        <p><a href="#"></a></p>
+                        <p><a href="/">Minh Duc Travel</a></p>
                     </div>
                 </div>
             </div>
@@ -108,14 +108,13 @@
                                 <span class="text-danger">{{ $errors->first('b_address') }}</span>
                             @endif
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="inputEmail3" class="control-label">Ngày khởi hành dự kiến</label>
-                            <input type="date" name="b_start_date"
-                                value="{{ old('b_address', isset($user) ? $user->address : '') }}" class="form-control">
+                            <input type="date" name="b_start_date" value="{{ old('b_address', isset($user) ? $user->address : '') }}" class="form-control">
                             @if ($errors->first('b_start_date'))
                                 <span class="text-danger">{{ $errors->first('b_start_date') }}</span>
                             @endif
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Số người lớn <sup
                                     class="text-danger">(*)</sup></label>
@@ -177,7 +176,8 @@
                         <p>Lịch trình : {{ $tour->t_schedule }}</p>
                         <p>Vận chuyển : {{ $tour->t_move_method }}</p>
                         <p>Số người tham gia : {{ $tour->t_number_guests }}</p>
-                        <p>Đã đăng ký : {{ $tour->t_number_registered }}</p>
+                        <p>Đã xác nhận : {{ $tour->t_number_registered }}</p>
+                        <p>Đã đăng ký : {{ $tour->t_follow }}</p>
                         <div class="phoneWrap">
                             <div class="hotline">0123456789</div>
                             <div class="hotline">0987654321</div>
@@ -190,14 +190,14 @@
                         <table style="border-collapse: collapse; width: 100%;margin-top:20px" border="1">
                             <tbody>
                                 <tr>
-                                    <td style="width: 10%;">Loại gi&aacute;/Độ tuổi</td>
-                                    <td style="width: 20%;">Người lớn(tr&ecirc;n 12 tuổi)</td>
-                                    <td style="width: 20%;">trẻ em(6-12 tuổi)</td>
-                                    <td style="width: 20%;">trẻ em(2-6 tuổi)</td>
+                                    <td style="width: 10%;">Độ tuổi</td>
+                                    <td style="width: 20%;">Người lớn(trên 12 tuổi)</td>
+                                    <td style="width: 20%;">Trẻ em(6-12 tuổi)</td>
+                                    <td style="width: 20%;">Trẻ em(2-6 tuổi)</td>
                                     <td style="width: 20%;">Sơ sinh( &lt;2 tuổi)</td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 10%;">Gi&aacute;&nbsp;</td>
+                                    <td style="width: 10%;">Giá</td>
                                     <td style="width: 20%;">
                                         {{ number_format($tour->t_price_adults - ($tour->t_price_adults * $tour->t_sale) / 100, 0, ',', '.') }}
                                         vnd</td>

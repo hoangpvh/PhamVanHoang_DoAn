@@ -102,7 +102,8 @@
                                                     <p><b>Hành trình:</b> {{ $tour->t_journeys }}</p>
                                                     <p><b>Lịch trình :</b> {{ $tour->t_schedule }}</p>
                                                     <p><b>Số người :</b> {{ $tour->t_number_guests }}</p>
-                                                    <p><b>Đã đăng ký :</b> {{ $tour->t_number_registered }}</p>
+                                                    <p><b>Đã đăng ký :</b> {{ $tour->t_follow }}</p>
+                                                    <p><b>Đã xác nhận :</b> {{ $tour->t_number_registered }}</p>
                                                     <p><b>Giá người lớn :</b> {{ number_format($tour->t_price_adults,0,',','.') }} vnd</p>
                                                     <p><b>Giá trẻ em :</b> {{ number_format($tour->t_price_children,0,',','.') }} vnd</p>
                                                 </td>

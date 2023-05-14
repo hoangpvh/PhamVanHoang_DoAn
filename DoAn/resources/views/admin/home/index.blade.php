@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Trang chủ</a></li>
-                        {{--<li class="breadcrumb-item"><a href="#">Quản lý bán hàng</a></li>--}}
+                        {{-- <li class="breadcrumb-item"><a href="#">Quản lý bán hàng</a></li> --}}
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,8 @@
                 <div class="card-header">
                     <h3 class="card-title"></h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-minus"></i></button>
                     </div>
                 </div>
                 <!-- /.card-header -->
@@ -83,35 +84,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body"  >
-                 
+                <div class="card-body">
+
                     <h3>Tour nổi bật </h3>
 
-<div>
-                    @if($tours->count() > 0)
-                    <table style="border-collapse: collapse; width: 100%; height: 68px;" border="1">
-<tbody>
-<tr style="height: 17px;">
-<td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Mã Tour</em></strong></td>
-<td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Tên tour</em></strong></td>
-<td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Lượt đăng ký</em></strong></td>
-</tr>
-               @foreach($tours as $tour)
-               
-<tr style="height: 17px;">
-<td style="width: 33.3333%; text-align: center; height: 17px;">{{$tour->id}}</td>
-<td style="width: 33.3333%; text-align: center; height: 17px;">{{$tour->t_title}}</td>
-<td style="width: 33.3333%; text-align: center; height: 17px;">{{$tour->t_follow}}</td>
-</tr>
-
-
-               @endforeach
-</div>
-</tbody>
-</table>
-</div>
-           @endif
-<span> .</span>
+                    <div>
+                        @if ($tours->count() > 0)
+                            <table style="border-collapse: collapse; width: 100%; height: 68px;" border="1">
+                                <tbody>
+                                    <tr style="height: 17px;">
+                                        <td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Mã
+                                                    Tour</em></strong></td>
+                                        <td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Tên
+                                                    tour</em></strong></td>
+                                        <td style="width: 33.3333%; text-align: center; height: 17px;"><strong><em>Lượt đăng
+                                                    ký</em></strong></td>
+                                    </tr>
+                                    @foreach ($tours as $tour)
+                                        <tr style="height: 17px;">
+                                            <td style="width: 33.3333%; text-align: center; height: 17px;">
+                                                {{ $tour->id }}</td>
+                                            <td style="width: 33.3333%; text-align: center; height: 17px;">
+                                                {{ $tour->t_title }}</td>
+                                            <td style="width: 33.3333%; text-align: center; height: 17px;">
+                                                {{ $tour->t_follow }}</td>
+                                        </tr>
+                                    @endforeach
+                    </div>
+                    </tbody>
+                    </table>
+                </div>
+                @endif
+                <span> .</span>
                 <div class="col-sm-8" style="margin-left: 15px">
                     <form action="">
                         <div class="row">
@@ -120,27 +124,33 @@
                                 <div class="form-group">
                                     <select name="select_month" id="" class="form-control">
                                         <option value="">Chọn tháng</option>
-                                        @for($i = 1; $i < 13; $i++)
-                                            @if(Request::get('select_month'))
-                                                <option {{ Request::get('select_month') == $i ? "selected='selected'" : '' }} value="{{$i}}">{{$i}}</option>
+                                        @for ($i = 1; $i < 13; $i++)
+                                            @if (Request::get('select_month'))
+                                                <option
+                                                    {{ Request::get('select_month') == $i ? "selected='selected'" : '' }}
+                                                    value="{{ $i }}">{{ $i }}</option>
                                             @else
-                                                <option {{ $month == $i ? "selected='selected'" : '' }} value="{{$i}}">{{$i}}</option>
+                                                <option {{ $month == $i ? "selected='selected'" : '' }}
+                                                    value="{{ $i }}">{{ $i }}</option>
                                             @endif
                                         @endfor
                                     </select>
                                 </div>
                             </div>
-                           
+
                             <div class="col-sm-12 col-md-4">
                                 <?php $year = date('Y'); ?>
                                 <div class="form-group">
                                     <select name="select_year" id="" class="form-control">
                                         <option value="">Chọn năm</option>
-                                        @for($i = $year - 15; $i <= $year + 5; $i++)
-                                            @if(Request::get('select_year'))
-                                                <option {{ Request::get('select_year') == $i ? "selected='selected'" : '' }} value="{{$i}}">{{$i}}</option>
+                                        @for ($i = $year - 15; $i <= $year + 5; $i++)
+                                            @if (Request::get('select_year'))
+                                                <option
+                                                    {{ Request::get('select_year') == $i ? "selected='selected'" : '' }}
+                                                    value="{{ $i }}">{{ $i }}</option>
                                             @else
-                                                <option {{ $year == $i ? "selected='selected'" : '' }} value="{{$i}}">{{$i}}</option>
+                                                <option {{ $year == $i ? "selected='selected'" : '' }}
+                                                    value="{{ $i }}">{{ $i }}</option>
                                             @endif
                                         @endfor
                                     </select>
@@ -148,7 +158,8 @@
                             </div>
                             <div class="col-sm-12 col-md-3">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success " style="margin-right: 10px"><i class="fas fa-search"></i> Lọc dữ liệu </button>
+                                    <button type="submit" class="btn btn-success " style="margin-right: 10px"><i
+                                            class="fas fa-search"></i> Lọc dữ liệu </button>
                                 </div>
                             </div>
 
@@ -159,7 +170,9 @@
 
                     <div class="col-sm-8">
                         <figure class="highcharts-figure">
-                            <div id="container2" data-list-day="{{ $listDay }}" data-money-default={{ $arrRevenueTransactionMonthDefault }} data-money={{ $arrRevenueTransactionMonth }}>
+                            <div id="container2" data-list-day="{{ $listDay }}"
+                                data-money-default={{ $arrRevenueTransactionMonthDefault }}
+                                data-money={{ $arrRevenueTransactionMonth }}>
                             </div>
                         </figure>
                     </div>
@@ -170,9 +183,9 @@
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 15px;">
-                <div class="col-sm-12">
+                    <div class="col-sm-12">
                         <figure class="highcharts-figure">
-                            <div id="container3" data-list-day="{{ $listDay }}"  data-money={{ $arrmoney }}>
+                            <div id="container3" data-list-day="{{ $listDay }}" data-money={{ $arrmoney }}>
                             </div>
                         </figure>
                     </div>
@@ -192,7 +205,7 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="text/javascript">
         let dataTransaction = $("#container").attr('data-json');
-        dataTransaction  =  JSON.parse(dataTransaction);
+        dataTransaction = JSON.parse(dataTransaction);
 
         let listday = $("#container2").attr("data-list-day");
         listday = JSON.parse(listday);
@@ -252,8 +265,8 @@
                     text: 'Số lượng khách hàng'
                 },
                 labels: {
-                    formatter: function () {
-                        return this.value ;
+                    formatter: function() {
+                        return this.value;
                     }
                 }
             },
@@ -270,8 +283,7 @@
                     }
                 }
             },
-            series: [
-                {
+            series: [{
                     name: 'Tổng số người lớn',
                     marker: {
                         symbol: 'square'
@@ -285,7 +297,7 @@
                     },
                     data: listMoneyMonthDefault
                 },
-               
+
             ]
         });
         Highcharts.chart('container3', {
@@ -307,8 +319,8 @@
                 },
                 // number_format($totalPrice, 0,',','.') 
                 labels: {
-                    formatter: function () {
-                        return this.value ;
+                    formatter: function() {
+                        return this.value;
                     }
                 }
             },
@@ -325,15 +337,14 @@
                     }
                 }
             },
-            series: [
-                {
+            series: [{
                     name: 'Doanh thu',
                     marker: {
                         symbol: 'square'
                     },
                     data: listMoneyMonth2
                 },
-                
+
             ]
         });
     </script>
